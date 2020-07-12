@@ -13,19 +13,17 @@
     }
   ],
   "scripts": {
-    "test": "uvu -r esm",
-    "start": "nodemon --exec \"uvu -r esm\"",
-    "build": "rollup -f cjs -d dist index.js",
+    "test": "uvu -r ts-node/register",
+    "build": "tsc",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
     "@size-limit/preset-small-lib": "4.5.4",
     "core-js": "3.6.5",
-    "esm": "3.2.25",
-    "nodemon": "1.18.4",
-    "rollup": "^2.21.0",
     "size-limit": "4.5.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6",
     "uvu": "0.2.1"
   }
 }
