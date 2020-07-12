@@ -8,8 +8,8 @@
   "main": "dist/index.js",
   "size-limit": [
     {
-      "path": "index.js",
-      "limit": "130 B"
+      "path": "dist/index.js",
+      "limit": "150 B"
     }
   ],
   "scripts": {
