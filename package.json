@@ -4,8 +4,13 @@
   "license": "MIT",
   "author": "Alexey Taktarov <molefrog@gmail.com>",
   "version": "1.0.0",
-  "module": "index.js",
-  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "main": "dist-cjs/index.js",
+  "files": [
+    "dist",
+    "dist-cjs"
+  ],
   "size-limit": [
     {
       "path": "dist/index.js",
@@ -14,7 +19,7 @@
   ],
   "scripts": {
     "test": "uvu -r ts-node/register",
-    "build": "tsc",
+    "build": "tsc && tsc --module commonjs --outDir dist-cjs",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {},
