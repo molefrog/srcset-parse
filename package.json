@@ -1,0 +1,24 @@
+{
+  "name": "srcset-parse",
+  "version": "0.0.1",
+  "main": "index.js",
+  "size-limit": [
+    {
+      "path": "index.js",
+      "limit": "130 B"
+    }
+  ],
+  "scripts": {
+    "test": "uvu -r esm",
+    "start": "nodemon --exec \"uvu -r esm\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "uvu": "0.2.1",
+    "esm": "3.2.25",
+    "core-js": "3.6.5",
+    "nodemon": "1.18.4",
+    "size-limit": "4.5.4",
+    "@size-limit/preset-small-lib": "4.5.4"
+  }
+}
