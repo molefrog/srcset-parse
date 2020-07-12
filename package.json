@@ -1,6 +1,6 @@
 {
   "name": "srcset-parse",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "module": "index.js",
   "main": "dist/index.js",
   "size-limit": [
@@ -12,7 +12,8 @@
   "scripts": {
     "test": "uvu -r esm",
     "start": "nodemon --exec \"uvu -r esm\"",
-    "build": "rollup -f cjs -d dist index.js"
+    "build": "rollup -f cjs -d dist index.js",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
