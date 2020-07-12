@@ -1,5 +1,8 @@
 {
   "name": "srcset-parse",
+  "description": "Extra tiny parser of srcset definitions",
+  "license": "MIT",
+  "author": "Alexey Taktarov <molefrog@gmail.com>",
   "version": "1.0.0",
   "module": "index.js",
   "main": "dist/index.js",
