@@ -1,4 +1,4 @@
-// tests/demo.js
+// import matchAll polyfill to support testing in older Node.js envs
 import "core-js/proposals/string-match-all";
 import parse from "./index";
 
@@ -10,7 +10,7 @@ test("parses srcset strings", () => {
 
   assert.equal(parse(srcset), [
     { url: "cat-@2x.jpeg", density: 2 },
-    { url: "dog.jpeg", width: 100 }
+    { url: "dog.jpeg", width: 100 },
   ]);
 });
 
@@ -21,7 +21,7 @@ test("ingores extra whitespaces", () => {
 
   assert.equal(parse(srcset), [
     { url: "foo-bar.png", density: 2 },
-    { url: "bar-baz.png", width: 100 }
+    { url: "bar-baz.png", width: 100 },
   ]);
 });
 
@@ -30,7 +30,7 @@ test("properly parses float descriptors", () => {
 
   assert.equal(parse(srcset), [
     { url: "cat.jpeg", density: 2.4 },
-    { url: "dog.jpeg", density: 1.5 }
+    { url: "dog.jpeg", density: 1.5 },
   ]);
 });
 
@@ -42,7 +42,7 @@ test("supports URLs that contain comma", () => {
 
   assert.equal(parse(srcset), [
     { url: "https://foo.bar/w=100,h=200/dog.png", width: 100 },
-    { url: "https://baz.bar/cat.png?meow=yes", width: 1024 }
+    { url: "https://baz.bar/cat.png?meow=yes", width: 1024 },
   ]);
 });
 
@@ -56,7 +56,7 @@ test("supports optional descriptors", () => {
   assert.equal(parse(srcset), [
     { url: "/cat.jpg" },
     { url: "/dog.png", density: 3 },
-    { url: "/lol" }
+    { url: "/lol" },
   ]);
 });
 
