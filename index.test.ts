@@ -1,5 +1,3 @@
-// import matchAll polyfill to support testing in older Node.js envs
-import "core-js/proposals/string-match-all";
 import parse from "./index";
 
 import { test } from "uvu";

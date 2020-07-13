@@ -18,10 +18,7 @@ export type ImageCandidate = { url: string } & {
  * @returns {ImageCandidate[]}
  */
 const parse = (srcset: string): ImageCandidate[] =>
-  // `String.prototype.matchAll` returns an iterable of matches.
-  // Supported by all non-obsolete platforms: Node >= 12, not IE11
-  // (core-js provides a polyfill for IE11)
-  [...srcset.matchAll(SRCSEG)].map(
+  matchAll(srcset, SRCSEG).map(
     ([, url, , value, modifier]): ImageCandidate => {
       let modKey = DescriptorNames[modifier];
 
@@ -29,5 +26,18 @@ const parse = (srcset: string): ImageCandidate[] =>
       return modKey ? { url, [modKey]: parseFloat(value) } : { url };
     }
   );
+
+/*
+ * Similar to String.prototype.matchAll, but returns an array
+ * rather than the iterable. It also works everywhere, including IE11.
+ * (`String.prototype.matchAll` doesn't).
+ */
+const matchAll = (str: string, regex: RegExp): RegExpExecArray[] => {
+  let match = null,
+    result = [];
+
+  while ((match = regex.exec(str)) !== null) result.push(match);
+  return result;
+};
 
 export default parse;
