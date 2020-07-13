@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "test": "uvu -r ts-node/register",
-    "build": "tsc && tsc --module commonjs --outDir dist-cjs",
+    "build": "tsc --module es2015 && tsc --module commonjs --outDir dist-cjs",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {},
