@@ -2,10 +2,11 @@
 
 An extra small [`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset)
 attribute parser compliant with [the latest spec](https://html.spec.whatwg.org/multipage/images.html#srcset-attributes).
-It's is inspired by the [**srcset** package](https://github.com/sindresorhus/srcset) and supports following:
+It's is inspired by the [**srcset** package](https://github.com/sindresorhus/srcset) and has following features:
 
-- URLs that contain commas;
-- Zero or one descriptors per image definitions (like `2x` or `100w`, but not both!).
+- Extra tiny, only ~150B;
+- Supports URLs that contain commas;
+- Zero or one descriptors per image definitions are supported (like `2x` or `100w`, but not both!);
 
 Example usage:
 
